@@ -94,7 +94,7 @@ body {
   align-items: center;
   justify-content: space-between;
   min-height: 100vh;
-  background: linear-gradient(135deg, #4b0082, #8a2be2, #dda0dd);
+  background: #dda0dd;
   background-size: 400% 400%;
   animation: color 10s ease-in-out infinite;
 }
@@ -166,6 +166,7 @@ main {
   border: 2px solid #4c164d;
   border-radius: 15px;
   height: 35vh;
+  width: auto;
   background-color: #f8e3e0;
   text-align: center;
   padding: 20px 0 0;
@@ -246,12 +247,31 @@ header,
   height: 100%;
   width: 100%;
   margin-bottom: 0;
-  border: #000 solid 2px;
+}
+
+.table th {
+  font-size: 20px;
+  align-content: center;
+  justify-content: normal;
+  text-align: justify;
+  padding: 20px;
+  color: rgb(255, 255, 255);
+  text-shadow: 1.5px 1.5px 0px rgba(0, 0, 0, 0.26);
+  margin-top: 100px;
+}
+
+.table img {
+  display: flex;
+  width: auto;
+  height: 50vh;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 15px 15px 15px rgba(0, 0, 0, 0.3);
 }
 
 .download-section {
   text-align: center;
-  margin-top: 20px;
+  margin-top: -15px;
 }
 
 .download-button {
@@ -276,34 +296,13 @@ header,
   transform: scale(1); /* Reset size */
 }
 
-.personal-info p {
-}
-
-.hobbies-items {
-  height: 60vmin;
-  width: 100%;
-  gap: 10px;
-  display: flex;
-  padding: 10px;
-  border: #8a2be2 solid 2px;
-  border-radius: 10px;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-evenly;
-  justify-items: center;
-}
-.hobbies-items img {
-  height: 30vh;
-  display: flex;
-  border-radius: 10px;
-}
-
-.hobbies-items h3 {
-  color: white;
-}
-
 /* General styles for the section */
-#talents-skills .container {
+#personal-info .container,
+#talents-skills .container,
+#love-ones .container,
+#pets .container,
+#hobbies .container,
+#projects .container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -316,7 +315,12 @@ header,
   box-sizing: border-box;
 }
 
-.skill {
+.skill,
+.labwans,
+.pets,
+.hobby,
+.projj,
+.dp {
   width: calc(33.33% - 20px); /* Ensure it fits three items in a row */
   margin: 0; /* Remove any default margin */
   padding: 0; /* Remove any default padding */
@@ -329,12 +333,22 @@ header,
   transition: transform 0.3s ease;
 }
 
-.skill:hover {
+.skill:hover,
+.labwans:hover,
+.pets:hover,
+.hobby:hover,
+.projj:hover,
+.dp:hover {
   transform: scale(1.05); /* Slightly scales the skill on hover */
 }
 
 /* Skill images */
-.skill img {
+.skill img,
+.labwans img,
+.pets img,
+.hobby img,
+.projj img,
+.dp img {
   width: 100%; /* Make the image fill its container */
   height: 100%;
   border-radius: 10px;
@@ -343,7 +357,11 @@ header,
 }
 
 /* Overlay for skill titles */
-.skill .intro {
+.skill .intro,
+.labwans .intro,
+.pets .intro,
+.hobby .intro,
+.projj .intro {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -354,7 +372,11 @@ header,
   text-align: center;
 }
 
-.skill .intro h1 {
+.skill .intro h1,
+.labwans .intro h1,
+.pets .intro h1,
+.hobby h1,
+.projj h1 {
   font-size: 1.5rem;
   margin: 0;
 }
@@ -479,8 +501,8 @@ footer div {
 }
 .footer .social a {
   font-size: 25px;
-  color: var(--main-color);
-  border: 2px solid var(--main-color);
+  color: #6a01b1;
+  border: 2px solid #6a01b1;
   border-radius: 50%;
   width: 42px;
   height: 42px;
@@ -521,6 +543,8 @@ footer div {
 .footer p {
   text-align: center;
   font-size: 12px;
-  color: #b135ca;
+  color: #ffffff;
   text-shadow: #000;
 }
+
+
