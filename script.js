@@ -2,7 +2,25 @@ let menuIcon = document.querySelector("#menu-icon");
 let navbar = document.querySelector(".navbar");
 let sections = document.querySelectorAll("section");
 let navLinks = document.querySelectorAll("header nav a");
-window.onscroll = () => {
+
+// Debounce function for scroll performance
+let debounce = (func, wait = 20, immediate = true) => {
+  let timeout;
+  return function () {
+    let context = this,
+      args = arguments;
+    let later = function () {
+      timeout = null;
+      if (!immediate) func.apply(context, args);
+    };
+    let callNow = immediate && !timeout;
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+    if (callNow) func.apply(context, args);
+  };
+};
+
+window.onscroll = debounce(() => {
   sections.forEach((sec) => {
     let top = window.scrollY;
     let offset = sec.offsetTop - 150;
@@ -17,17 +35,22 @@ window.onscroll = () => {
       });
     }
   });
-};
+}, 100);
+
 menuIcon.onclick = () => {
   menuIcon.classList.toggle("bx-x");
   navbar.classList.toggle("active");
 };
+
+// Close navbar on link click
 navLinks.forEach((link) => {
   link.onclick = () => {
     menuIcon.classList.remove("bx-x");
     navbar.classList.remove("active");
   };
 });
+
+// Form validation and submission remain unchanged
 (function () {
   "use strict";
   const forms = document.querySelectorAll(".needs-validation");
